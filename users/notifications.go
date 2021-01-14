@@ -53,3 +53,12 @@ func UpdateCurrentSecretKey(userID int64, secretKey string) error {
 	}
 	return usrs.UpdateCurrentSecretKey(userID, secretKey)
 }
+
+// GetByEmail get user by email
+func GetByEmail(email string) (*User, error) {
+	err := ValidateRegisterImplement()
+	if err != nil {
+		return nil, err
+	}
+	return usrs.GetByEmail(email)
+}

@@ -8,4 +8,5 @@ type Users interface {
 	GetRedirectURLs(userID int64) ([]RedirectURL, error)
 	Delete(userID int64) error
 	UpdateCurrentSecretKey(userID int64, secretKey string) error
+	GetByEmail(email string) (*User, error)
 }
