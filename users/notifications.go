@@ -44,3 +44,12 @@ func GetRedirectURLs(userID int64) ([]RedirectURL, error) {
 	}
 	return usrs.GetRedirectURLs(userID)
 }
+
+// UpdateCurrentSecretKey of user
+func UpdateCurrentSecretKey(userID int64, secretKey string) error {
+	err := ValidateRegisterImplement()
+	if err != nil {
+		return err
+	}
+	return usrs.UpdateCurrentSecretKey(userID, secretKey)
+}
