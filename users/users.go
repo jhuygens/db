@@ -64,7 +64,7 @@ func GetByEmail(email string) (*User, error) {
 }
 
 // UpdateToken update user access token
-func UpdateToken(clientID int64, token, refreshToken string) error {
+func UpdateToken(clientID, token, refreshToken string) error {
 	err := ValidateRegisterImplement()
 	if err != nil {
 		return err
