@@ -62,3 +62,21 @@ func GetByEmail(email string) (*User, error) {
 	}
 	return usrs.GetByEmail(email)
 }
+
+// UpdateToken update user access token
+func UpdateToken(clientID int64, token, refreshToken string) error {
+	err := ValidateRegisterImplement()
+	if err != nil {
+		return err
+	}
+	return usrs.UpdateToken(clientID, token, refreshToken)
+}
+
+// GetByClientID get user by client Id
+func GetByClientID(clientID string) (*User, error) {
+	err := ValidateRegisterImplement()
+	if err != nil {
+		return nil, err
+	}
+	return usrs.GetByClientID(clientID)
+}

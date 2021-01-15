@@ -9,4 +9,6 @@ type Users interface {
 	Delete(userID int64) error
 	UpdateCurrentSecretKey(userID int64, secretKey string) error
 	GetByEmail(email string) (*User, error)
+	UpdateToken(clientID int64, token, refreshToken string) error
+	GetByClientID(clientID string) (*User, error)
 }
