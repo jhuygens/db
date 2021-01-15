@@ -8,6 +8,8 @@ type User struct {
 	AppName          string
 	ClientID         string
 	CurrentSecretKey string
+	Token            string
+	RefreshToken     string
 	RedirectURLs     []RedirectURL
 	CreatedAt        string
 }
