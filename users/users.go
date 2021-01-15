@@ -46,7 +46,7 @@ func GetRedirectURLs(userID int64) ([]RedirectURL, error) {
 }
 
 // UpdateCurrentSecretKey of user
-func UpdateCurrentSecretKey(userID int64, secretKey string) error {
+func UpdateCurrentSecretKey(userID, secretKey string) error {
 	err := ValidateRegisterImplement()
 	if err != nil {
 		return err
